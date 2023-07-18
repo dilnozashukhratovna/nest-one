@@ -22,10 +22,10 @@ export class CompanyController {
     return this.companyService.getCompanyById(+id);
   }
 
-  @Get('name')
-  async getCompanyByName(@Param('name') name: string) {
-    return this.companyService.getCompanyByName(name);
-  }
+  // @Get('name')
+  // async getCompanyByName(@Param('name') name: string) {
+  //   return this.companyService.getCompanyByName(name);
+  // }
 
   @Delete(':id')
   async deleteCompanyById(@Param('id') id: string) {

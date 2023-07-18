@@ -25,10 +25,10 @@ export class CompanyService {
     return company;
   }
 
-  async getCompanyByName(name: string) {
-    const company = await this.companyRepo.findOne({ where: { name } });
-    return company;
-  }
+  // async getCompanyByName(name: string) {
+  //   const company = await this.companyRepo.findOne({ where: { name } });
+  //   return company;
+  // }
 
   async deleteCompanyById(id: number) {
     const company = await this.companyRepo.destroy({ where: { id } });
