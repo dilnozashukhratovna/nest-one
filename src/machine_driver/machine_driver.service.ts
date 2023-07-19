@@ -21,7 +21,9 @@ export class Machine_driverService {
   }
 
   async getAllMachine_driver(): Promise<Machine_driver[]> {
-    const machine_drivers = await this.machine_driverRepo.findAll();
+    const machine_drivers = await this.machine_driverRepo.findAll({
+      include: { all: true },
+    });
     return machine_drivers;
   }
 

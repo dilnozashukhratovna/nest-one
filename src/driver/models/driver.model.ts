@@ -1,4 +1,6 @@
-import { Table, Model, Column, DataType } from 'sequelize-typescript';
+import { Table, Model, Column, DataType, BelongsToMany } from 'sequelize-typescript';
+import { Machine } from 'src/machine/models/machine.model';
+import { Machine_driver } from 'src/machine_driver/models/machine_driver.model';
 
 interface DriverAttr {
   first_name: string;
@@ -23,4 +25,7 @@ export class Driver extends Model<Driver, DriverAttr> {
     allowNull: false,
   })
   last_name: string;
+
+  @BelongsToMany(()=>Machine, ()=>Machine_driver)
+  machines:Machine[]
 }

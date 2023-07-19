@@ -1,4 +1,6 @@
-import { Table, Model, Column, DataType } from 'sequelize-typescript';
+import { Table, Model, Column, DataType, ForeignKey } from 'sequelize-typescript';
+import { Driver } from 'src/driver/models/driver.model';
+import { Machine } from 'src/machine/models/machine.model';
 
 interface MachineAttr {
   machineId: number;
@@ -13,10 +15,14 @@ export class Machine_driver extends Model<Machine_driver, MachineAttr> {
     primaryKey: true,
   })
   id: number;
+
+  @ForeignKey(() => Machine)
   @Column({
     type: DataType.INTEGER,
   })
   machineId: number;
+
+  @ForeignKey(() => Driver)
   @Column({
     type: DataType.INTEGER,
   })
