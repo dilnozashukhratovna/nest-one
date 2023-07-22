@@ -11,6 +11,12 @@ import { Builder } from './builder/models/builder.model';
 import { BuilderModule } from './builder/builder.module';
 import { Driver } from './driver/models/driver.model';
 import { DriverModule } from './driver/driver.module';
+import { RolesModule } from './roles/roles.module';
+import { Role } from './roles/models/roles.model';
+import { UsersModule } from './users/users.module';
+import { User } from './users/models/users.model';
+import { UserRoles } from './roles/models/user-roles.model';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -22,7 +28,7 @@ import { DriverModule } from './driver/driver.module';
       username: process.env.POSTGRES_USER,
       password: String(process.env.POSTGRES_PASSWORD),
       database: process.env.POSTGRES_DB,
-      models: [Company, Machine, Machine_driver, Builder, Driver],
+      models: [Company, Machine, Machine_driver, Builder, Driver, Role, User, UserRoles],
       autoLoadModels: true,
       logging: true,
     }),
@@ -30,7 +36,10 @@ import { DriverModule } from './driver/driver.module';
     MachineModule,
     Machine_driverModule,
     BuilderModule,
-    DriverModule
+    DriverModule,
+    RolesModule,
+    UsersModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
