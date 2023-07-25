@@ -13,20 +13,19 @@ export class JwtAuthGuard implements CanActivate {
   canActivate(
     context: ExecutionContext,
   ): boolean | Promise<boolean> | Observable<boolean> {
-
     const req = context.switchToHttp().getRequest();
 
     const authHeader = req.headers.authorization;
     if (!authHeader) {
       throw new UnauthorizedException({
-        message: "Foydalanuvchi Authorizationdan o'tmagan",
+        message: "Foydalanuvchi avtorizatsiyadan o'tmagan1",
       });
     }
     const bearer = authHeader.split(' ')[0];
     const token = authHeader.split(' ')[1];
     if (bearer !== 'Bearer' || !token) {
       throw new UnauthorizedException({
-        message: "Foydalanuvchi Authorizationdan o'tmagan",
+        message: "Foydalanuvchi avtorizatsiyadan o'tmagan2",
       });
     }
     let user: any;
@@ -35,7 +34,7 @@ export class JwtAuthGuard implements CanActivate {
       console.log(user);
     } catch (error) {
       throw new UnauthorizedException({
-        message: "Foydalanuvchi Authorizationdan o'tmagan",
+        message: "Foydalanuvchi avtorizatsiyadan o'tmagan3",
       });
     }
     req.user = user;
