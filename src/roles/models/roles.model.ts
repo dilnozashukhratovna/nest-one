@@ -6,9 +6,8 @@ import {
   BelongsToMany,
 } from 'sequelize-typescript';
 import { UserRoles } from './user-roles.model';
-import { User } from 'src/users/models/users.model';
+import { User } from '../../users/models/users.model';
 import { ApiProperty } from '@nestjs/swagger';
-
 
 interface RoleAttr {
   value: string;
@@ -33,7 +32,10 @@ export class Role extends Model<Role, RoleAttr> {
   })
   value: string;
 
-  @ApiProperty({ example: 'ADMIN role', description: 'User roliga explanation' })
+  @ApiProperty({
+    example: 'ADMIN role',
+    description: 'User roliga explanation',
+  })
   @Column({
     type: DataType.STRING,
     allowNull: false,

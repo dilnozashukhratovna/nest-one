@@ -20,14 +20,14 @@ import { AuthModule } from './auth/auth.module';
 import { PostsModule } from './posts/posts.module';
 import { Post } from './posts/models/post.model';
 import { FilesModule } from './files/files.module';
-import {resolve} from 'path';
+import { resolve } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     ServeStaticModule.forRoot({
-      rootPath: resolve(__dirname, 'static')
+      rootPath: resolve(__dirname, 'static'),
     }),
     SequelizeModule.forRoot({
       dialect: 'postgres',
@@ -36,7 +36,17 @@ import { ServeStaticModule } from '@nestjs/serve-static';
       username: process.env.POSTGRES_USER,
       password: String(process.env.POSTGRES_PASSWORD),
       database: process.env.POSTGRES_DB,
-      models: [Company, Machine, Machine_driver, Builder, Driver, Role, User, UserRoles, Post],
+      models: [
+        Company,
+        Machine,
+        Machine_driver,
+        Builder,
+        Driver,
+        Role,
+        User,
+        UserRoles,
+        Post,
+      ],
       autoLoadModels: true,
       logging: true,
     }),

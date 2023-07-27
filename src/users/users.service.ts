@@ -8,7 +8,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from './models/users.model';
-import { RolesService } from 'src/roles/roles.service';
+import { RolesService } from '../roles/roles.service';
 import { AddRoleDto } from './dto/add-role.dto';
 import { ActivateUserDto } from './dto/activate-user.dto';
 
@@ -28,9 +28,9 @@ export class UsersService {
       throw new BadRequestException('Role not found');
     }
 
-    await newUser.$set('roles', [role.id]);
-    await newUser.save();
-    newUser.save();
+    // await newUser.$set('roles', [role.id]);
+    // await newUser.save();
+    // newUser.save();
     newUser.roles = [role];
     return newUser;
   }

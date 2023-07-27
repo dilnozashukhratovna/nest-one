@@ -1,8 +1,9 @@
 import { Table, Model, Column, DataType, ForeignKey, BelongsTo, BelongsToMany } from 'sequelize-typescript';
-import { Company } from 'src/company/models/company.model';
-import { Driver } from 'src/driver/models/driver.model';
-import { Machine_driver } from 'src/machine_driver/models/machine_driver.model';
+
 import { ApiProperty } from '@nestjs/swagger';
+import { Company } from '../../company/models/company.model';
+import { Driver } from '../../driver/models/driver.model';
+import { Machine_driver } from '../../machine_driver/models/machine_driver.model';
 
 interface MachineAttr {
   name: string;

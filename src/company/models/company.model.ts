@@ -1,7 +1,7 @@
 import { Table, Model, Column, DataType, HasMany } from 'sequelize-typescript';
-import { Builder } from 'src/builder/models/builder.model';
-import { Machine } from 'src/machine/models/machine.model';
 import { ApiProperty } from '@nestjs/swagger';
+import { Builder } from '../../builder/models/builder.model';
+import { Machine } from '../../machine/models/machine.model';
 
 
 interface CompanyAttr {

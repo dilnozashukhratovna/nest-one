@@ -1,7 +1,8 @@
 import { Table, Model, Column, DataType, ForeignKey } from 'sequelize-typescript';
-import { Driver } from 'src/driver/models/driver.model';
-import { Machine } from 'src/machine/models/machine.model';
+
 import { ApiProperty } from '@nestjs/swagger';
+import { Machine } from '../../machine/models/machine.model';
+import { Driver } from '../../driver/models/driver.model';
 
 interface MachineAttr {
   machineId: number;

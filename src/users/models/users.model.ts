@@ -6,10 +6,10 @@ import {
   BelongsToMany,
   HasMany,
 } from 'sequelize-typescript';
-import { Role } from 'src/roles/models/roles.model';
-import { UserRoles } from 'src/roles/models/user-roles.model';
+import { Role } from '../../roles/models/roles.model';
+import { UserRoles } from '../../roles/models/user-roles.model';
 import { ApiProperty } from '@nestjs/swagger';
-import { Post } from 'src/posts/models/post.model';
+import { Post } from '../../posts/models/post.model';
 
 interface UserAttr {
   name: string;
