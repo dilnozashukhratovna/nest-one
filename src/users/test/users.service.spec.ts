@@ -7,7 +7,6 @@ import { getModelToken } from '@nestjs/sequelize';
 import { Role } from '../../roles/models/roles.model';
 import { User } from '../models/users.model';
 import { CreateUserDto } from '../dto/create-user.dto';
-import { UsersController } from '../users.controller';
 
 describe('User service', () => {
   let usersService: UsersService;
@@ -71,7 +70,7 @@ describe('User service', () => {
   });
 
   describe('getUserById', () => {
-    describe('when getUserById id called', () => {
+    describe('when getUserById is called', () => {
       it('then it should call usersService', async () => {
         expect(await usersService.getUserById(userStub().id)).toEqual(
           userStub(),
@@ -81,7 +80,7 @@ describe('User service', () => {
   });
 
   describe('getAllUsers', () => {
-    describe('when getAllUsers id called', () => {
+    describe('when getAllUsers is called', () => {
       it('then it should call usersService', async () => {
         expect(await usersService.getAllUsers()).toEqual([userStub()]);
       });
@@ -89,7 +88,7 @@ describe('User service', () => {
   });
 
   describe('deleteUserById', () => {
-    describe('when deleteUserById id called', () => {
+    describe('when deleteUserById is called', () => {
       let res: Object;
       beforeAll(async () => {
         res = await usersService.deleteUserById(userStub().id);

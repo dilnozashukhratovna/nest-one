@@ -38,20 +38,20 @@ describe('Users controller', () => {
           email: userStub().email,
           password: userStub().password,
         };
-        user = await usersController.createUser(createUserDto)
+        user = await usersController.createUser(createUserDto);
         console.log(user);
       });
       it('then it should call usersService', () => {
         expect(usersService.createUser).toHaveBeenCalledWith(createUserDto);
       });
-       it('then it should return user', () => {
-         expect(user).toEqual(userStub());
-       });
+      it('then it should return user', () => {
+        expect(user).toEqual(userStub());
+      });
     });
   });
 
   describe('getUserById', () => {
-    describe('when getUserById id called', () => {
+    describe('when getUserById is called', () => {
       let user: User;
       beforeEach(async () => {
         user = await usersController.getUserById(userStub().id.toString());
@@ -67,7 +67,7 @@ describe('Users controller', () => {
   });
 
   describe('getAllUsers', () => {
-    describe('when getAllUsers id called', () => {
+    describe('when getAllUsers is called', () => {
       let users: User[];
       beforeEach(async () => {
         users = await usersController.getAllUsers();
@@ -83,7 +83,7 @@ describe('Users controller', () => {
   });
 
   describe('deleteUserById', () => {
-    describe('when deleteUserById id called', () => {
+    describe('when deleteUserById is called', () => {
       let res: Object;
       beforeAll(async () => {
         res = await usersController.deleteUserById(userStub().id.toString());
@@ -97,5 +97,4 @@ describe('Users controller', () => {
       });
     });
   });
-
 });
