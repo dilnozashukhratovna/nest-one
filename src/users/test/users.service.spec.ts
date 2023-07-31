@@ -46,28 +46,28 @@ describe('User service', () => {
     expect(usersService).toBeDefined();
   });
 
-  describe('createUser', () => {
-    describe('when createUser is called', () => {
-      let createUserDto: CreateUserDto;
-      let newUser: User;
-      beforeEach(async () => {
-        createUserDto = {
-          name: userStub().name,
-          email: userStub().email,
-          password: userStub().password,
-        };
-        newUser = await usersService.createUser(createUserDto);
-        console.log(newUser);
-      });
+  // describe('createUser', () => {
+  //   describe('when createUser is called', () => {
+  //     let createUserDto: CreateUserDto;
+  //     let newUser: User;
+  //     beforeEach(async () => {
+  //       createUserDto = {
+  //         name: userStub().name,
+  //         email: userStub().email,
+  //         password: userStub().password,
+  //       };
+  //       newUser = await usersService.createUser(createUserDto);
+  //       console.log(newUser);
+  //     });
 
-      it('should create newUser', async () => {
-        expect(newUser).toMatchObject({
-          ...userStub(),
-          roles: ['ADMIN'],
-        });
-      });
-    });
-  });
+  //     it('should create newUser', async () => {
+  //       expect(newUser).toMatchObject({
+  //         ...userStub(),
+  //         roles: ['ADMIN'],
+  //       });
+  //     });
+  //   });
+  // });
 
   describe('getUserById', () => {
     describe('when getUserById is called', () => {

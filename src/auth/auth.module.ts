@@ -10,7 +10,7 @@ import { UsersModule } from '../users/users.module';
     JwtModule.register({
       secret: 'MyVeryVerySecretKey',
       signOptions: {
-        expiresIn: '24'
+        expiresIn: '24h'
       },
     }),
   ],

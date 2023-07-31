@@ -33,6 +33,8 @@ export class JwtAuthGuard implements CanActivate {
       user = this.jwtService.verify(token);
       console.log(user);
     } catch (error) {
+      console.log(error);
+      
       throw new UnauthorizedException({
         message: "Foydalanuvchi avtorizatsiyadan o'tmagan3",
       });
